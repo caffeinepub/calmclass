@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Figtree - body font */
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/Figtree.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Fraunces - display font */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 1rem;
+
+    /* CalmClass warm sage palette */
+    --background: 0.97 0.015 95;
+    --foreground: 0.22 0.04 260;
+
+    --card: 0.995 0.008 85;
+    --card-foreground: 0.22 0.04 260;
+
+    --popover: 0.995 0.008 85;
+    --popover-foreground: 0.22 0.04 260;
+
+    /* Primary: warm teal-sage */
+    --primary: 0.52 0.11 168;
+    --primary-foreground: 0.98 0.005 90;
+
+    /* Secondary: soft peach */
+    --secondary: 0.94 0.04 55;
+    --secondary-foreground: 0.28 0.05 30;
+
+    --muted: 0.93 0.018 90;
+    --muted-foreground: 0.52 0.04 240;
+
+    --accent: 0.88 0.07 55;
+    --accent-foreground: 0.28 0.05 30;
+
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.98 0.005 90;
+
+    --border: 0.88 0.025 95;
+    --input: 0.90 0.025 95;
+    --ring: 0.52 0.11 168;
+
+    /* Chart tokens - emotion colors */
+    --chart-1: 0.72 0.14 168;
+    --chart-2: 0.75 0.16 55;
+    --chart-3: 0.68 0.19 280;
+    --chart-4: 0.78 0.12 220;
+    --chart-5: 0.65 0.20 30;
+
+    /* Emotion accent tokens */
+    --emotion-calm: 0.78 0.12 195;
+    --emotion-focused: 0.68 0.18 255;
+    --emotion-motivated: 0.72 0.20 55;
+    --emotion-happy: 0.82 0.18 85;
+    --emotion-anxious: 0.72 0.22 30;
+    --emotion-tired: 0.72 0.10 240;
+    --emotion-stressed: 0.65 0.20 22;
+    --emotion-sad: 0.65 0.14 255;
+
+    --sidebar: 0.95 0.02 130;
+    --sidebar-foreground: 0.22 0.04 260;
+    --sidebar-primary: 0.52 0.11 168;
+    --sidebar-primary-foreground: 0.98 0.005 90;
+    --sidebar-accent: 0.90 0.03 120;
+    --sidebar-accent-foreground: 0.22 0.04 260;
+    --sidebar-border: 0.85 0.03 120;
+    --sidebar-ring: 0.52 0.11 168;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, oklch(0.92 0.04 168 / 0.3) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, oklch(0.92 0.05 55 / 0.25) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .emotion-calm {
+    background: oklch(var(--emotion-calm) / 0.15);
+    border-color: oklch(var(--emotion-calm) / 0.5);
+    color: oklch(0.35 0.08 195);
+  }
+  .emotion-focused {
+    background: oklch(var(--emotion-focused) / 0.12);
+    border-color: oklch(var(--emotion-focused) / 0.45);
+    color: oklch(0.32 0.12 255);
+  }
+  .emotion-motivated {
+    background: oklch(var(--emotion-motivated) / 0.15);
+    border-color: oklch(var(--emotion-motivated) / 0.5);
+    color: oklch(0.35 0.15 55);
+  }
+  .emotion-happy {
+    background: oklch(var(--emotion-happy) / 0.15);
+    border-color: oklch(var(--emotion-happy) / 0.5);
+    color: oklch(0.38 0.14 80);
+  }
+  .emotion-anxious {
+    background: oklch(var(--emotion-anxious) / 0.12);
+    border-color: oklch(var(--emotion-anxious) / 0.45);
+    color: oklch(0.38 0.15 30);
+  }
+  .emotion-tired {
+    background: oklch(var(--emotion-tired) / 0.12);
+    border-color: oklch(var(--emotion-tired) / 0.4);
+    color: oklch(0.35 0.08 240);
+  }
+  .emotion-stressed {
+    background: oklch(var(--emotion-stressed) / 0.12);
+    border-color: oklch(var(--emotion-stressed) / 0.45);
+    color: oklch(0.35 0.15 22);
+  }
+  .emotion-sad {
+    background: oklch(var(--emotion-sad) / 0.12);
+    border-color: oklch(var(--emotion-sad) / 0.4);
+    color: oklch(0.32 0.10 255);
+  }
+
+  .glass-card {
+    background: oklch(0.995 0.005 90 / 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid oklch(0.92 0.02 90 / 0.6);
+    box-shadow: 0 4px 24px oklch(0.22 0.04 260 / 0.06), 0 1px 4px oklch(0.22 0.04 260 / 0.04);
+  }
+}
